@@ -9,6 +9,7 @@ import { Contenido2Component } from './contenido2/contenido2.component';
 import { Contenido3Component } from './contenido3/contenido3.component';
 import { Contenido4Component } from './contenido4/contenido4.component';
 import { Boton1Component } from './boton1.component';
+import { CerradoComponent } from './cerrado/cerrado.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
@@ -17,7 +18,7 @@ import { Boton1Component } from './boton1.component';
     Contenido2Component,
     Contenido3Component,
     Contenido4Component,
-    Boton1Component],
+    Boton1Component, CerradoComponent],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

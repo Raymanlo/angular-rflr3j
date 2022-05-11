@@ -60,7 +60,9 @@ p {
 }
 </style>
 
-<div *ngIf="valorE == opciones.inicial">{{tab}}</div>
+<!--
+<div *ngIf="valorE == opciones.inicial">{{tab}}</div>-->
+<cerrado *ngIf="valorE == opciones.inicial"  componenteCerrado={{tab}}></cerrado>
 
 <h1>Pel&iacute;culas sobre viajes en el tiempo</h1>
 

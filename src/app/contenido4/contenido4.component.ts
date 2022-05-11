@@ -57,95 +57,14 @@ export class Contenido4Component implements OnInit, OnDestroy, OnChanges{
     var micadena2 = this.micadena;
     var arrPeli = this.arregloPeli;
     var arrMod = this.arregloMod;
-    //var micadena2 = "";
-    /*document.addEventListener("keyup", function(event) {
-      //document.getElementById('searchBox').append(""+event.keyCode);
-      if(window.event) { // IE                  
-        numerito = event.keyCode;
-        micadena2 = micadena2 + String.fromCharCode(numerito);
-      } else if(event.which){ // Netscape/Firefox/Opera                 
-        numerito = event.which;
-        micadena2 = micadena2 + String.fromCharCode(numerito);
-      }
-      document.getElementById('searchBox').setAttribute('value', micadena2);
-      //console.log((String.fromCharCode(numerito)));
-    });*/
-   /* document.addEventListener("keypress", function myKeyPress(e){
-      var keynum;
-    
-      if(window.event) { // IE                  
-        keynum = e.keyCode;
-        micadena2 = micadena2 + String.fromCharCode(keynum);
-      } else if(e.which){ // Netscape/Firefox/Opera                 
-        keynum = e.which;
-        micadena2 = micadena2 + String.fromCharCode(keynum);
-      }
-      //alert(String.fromCharCode(keynum));
-      
-      console.log(micadena2);
-      //console.log(document.getElementById('searchBox').getAttribute('value'));
-      document.getElementById('searchBox').setAttribute('value', micadena2);
-      let m1 = arrPeli.map(z=>{
-        if((<HTMLInputElement>document.getElementById('searchBox')).value.toString() == z.name.toString()){
-          console.log("EXITO");
-          arrMod.push(z);
-          console.log(arrMod);
-          //document.getElementById('searchBox').setAttribute('value', "");
-        }
-      });
-    });*/
-    /*document.addEventListener("keypress", function myKeyPress(e){
-      console.log(micadena2);
-      document.getElementById('searchBox').setAttribute('value', micadena2);
-      let m1 = arrPeli.filter(function (z){
-          return z.name.toString().includes((<HTMLInputElement>document.getElementById('searchBox')).value.toString());
-          //console.log(m1);
-      });
-      //arrMod.filter(m1);
-      //console.log(m1);
-      arrMod = m1;
-      console.log("arrMOD", arrMod);
-      
-    });*/
-    //document.getElementById('searchBox').setAttribute('value', micadena2);
-    //this.arregloMod = arrMod;
+
     let m1 = arrPeli.filter(z=>{
       return z.name.toString().includes((<HTMLInputElement>document.getElementById('searchBox')).value.toString());
-      //console.log(m1);
-      //console.log(z);
     });
     arrMod = m1;
     console.log(micadena2);
     this.arregloMod = arrMod;
-    console.log("miarrmod", arrMod);
-    function cambio(){
-      this.arregloMod = arrMod;
-    }
-    
-    //this.micadena = micadena2; como disparar ngchanges con ngmodule
-    //Two way binding
-  
-    /*document.addEventListener("keyup", function myKeyPress(e){
-      micadena2="";
-      //micadena="";
-    });*/
-    //var checa = document.getElementById('searchBox').getAttribute('value');
-    //console.log(checa);
-    
-    /*for(let k=0;k<this.indexH;k++){
-      if(micadena2==arregloPeli[k]);
-    }*/
-    /*var searchTimeout;
-    document.getElementById('searchBox').onkeypress = function () {
-      if (searchTimeout != undefined) clearTimeout(searchTimeout);
-        searchTimeout = setTimeout(callServerScript, 250);
-    };
-    
-    function callServerScript() {
-    // your code here
-    }*/
-
-    
+    console.log("miarrmod", arrMod);  
   }
 
   
