@@ -9,8 +9,6 @@ import { Contenido2Component } from './contenido2/contenido2.component';
 import { Contenido3Component } from './contenido3/contenido3.component';
 import { Contenido4Component } from './contenido4/contenido4.component';
 import { Boton1Component } from './boton1.component';
-import { Boton2Component } from './boton2.component';
-import { Boton3Component } from './boton3.component';
 
 @NgModule({
   imports:      [ BrowserModule, FormsModule ],
@@ -19,9 +17,7 @@ import { Boton3Component } from './boton3.component';
     Contenido2Component,
     Contenido3Component,
     Contenido4Component,
-    Boton1Component, 
-    Boton2Component, 
-    Boton3Component],
+    Boton1Component],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

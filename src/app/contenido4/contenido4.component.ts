@@ -19,7 +19,17 @@ export class Contenido4Component implements OnInit, OnDestroy, OnChanges{
   cuenta=0;
   contador2=0;
   tab="Componente 4";
-  micadena="";
+  
+  //Definir el setter y getter
+  private micadena: string = "";
+  get getCadena(): string {
+    return this.micadena;
+  }
+
+  set setCadena(val: string) {
+    //do some extra work here
+    this.micadena = val;
+  }
   ngOnInit(){
     console.log(this.cuenta2);
     //this.parentFunction2.emit(6); 
@@ -28,7 +38,9 @@ export class Contenido4Component implements OnInit, OnDestroy, OnChanges{
     /*for(let j=0;j<this.indexH;j++){
       this.arregloMod[j] = this.arregloPeli[j];
     }*/
-    this.micadena="";  
+    this.micadena="";
+    //Inciar arregloMod
+    this.arregloMod = [];  
     //(<HTMLInputElement>document.getElementById('searchBox')).value="";
   }
   ngOnDestroy(){
@@ -82,22 +94,37 @@ export class Contenido4Component implements OnInit, OnDestroy, OnChanges{
         }
       });
     });*/
-    document.addEventListener("keypress", function myKeyPress(e){
+    /*document.addEventListener("keypress", function myKeyPress(e){
       console.log(micadena2);
       document.getElementById('searchBox').setAttribute('value', micadena2);
-      let m1 = arrMod.filter(function (z){
+      let m1 = arrPeli.filter(function (z){
           return z.name.toString().includes((<HTMLInputElement>document.getElementById('searchBox')).value.toString());
-          
+          //console.log(m1);
       });
       //arrMod.filter(m1);
       //console.log(m1);
       arrMod = m1;
+      console.log("arrMOD", arrMod);
+      
+    });*/
+    //document.getElementById('searchBox').setAttribute('value', micadena2);
+    //this.arregloMod = arrMod;
+    let m1 = arrPeli.filter(z=>{
+      return z.name.toString().includes((<HTMLInputElement>document.getElementById('searchBox')).value.toString());
+      //console.log(m1);
+      //console.log(z);
     });
+    arrMod = m1;
+    console.log(micadena2);
     this.arregloMod = arrMod;
+    console.log("miarrmod", arrMod);
+    function cambio(){
+      this.arregloMod = arrMod;
+    }
+    
     //this.micadena = micadena2; como disparar ngchanges con ngmodule
     //Two way binding
-    
-
+  
     /*document.addEventListener("keyup", function myKeyPress(e){
       micadena2="";
       //micadena="";
@@ -184,21 +211,6 @@ cuenta2 = this.arregloPeli.length;
 //cuenta=this.indexH;
 ///this.contadorH=0;
 arregloMod= [];
-//arregloModificado = arregloPelicula;
-/*myKeyPress(e){
-  var keynum;
-
-  if(window.event) { // IE                  
-    keynum = e.keyCode;
-  } else if(e.which){ // Netscape/Firefox/Opera                 
-    keynum = e.which;
-  }
-
-  alert(String.fromCharCode(keynum));
-}*/
-
-
-
 
 //4.25 y 4.5
 }
