@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Avengers: Endgame",
+    "distributor": "Walt Disney Studios Motion Pictures",
+    "year": 2019,
+    "director": "Anthony and Joe Russo", 
+    "boxOffice": "$2 797 501 328" 
+  },
+  {
+    "name": "Deadpool 2",
+    "distributor": "Walt Disney Studios Motion Pictures",
+    "year": 2018,
+    "director": "David Leitch", 
+    "boxOffice": "$785 546 611" 
+  },
+  {
+    "name": "Terminator 2: Judgement Day",
+    "distributor": "TriStar Pictures",
+    "year": 1991,
+    "director": "James Cameron", 
+    "boxOffice": "$520 881 154" 
+  },
+  {
+    "name": "Back to the future",
+    "distributor": "Universal Pictures",
+    "year": 1985,
+    "director": "Robert Zemeckis", 
+    "boxOffice": "$381 109 765" 
+  },
+  {
+    "name": "Edge of Tomorrow",
+    "distributor": "Warner Bros. Pictures",
+    "year": 2014,
+    "director": "Doug Liman",
+    "boxOffice": "$370 541 256" 
+  },
+  {
+    "name": "Tenet",
+    "distributor": "Warner Bros. Pictures",
+    "year": 2020,
+    "director": "Christopher Nolan", 
+    "boxOffice": "$365 609 000"
+  }
+]

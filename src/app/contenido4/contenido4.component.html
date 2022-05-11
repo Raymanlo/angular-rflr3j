@@ -1,0 +1,57 @@
+<button (click)="sendData()"
+style="background: url(https://image.shutterstock.com/image-vector/cross-sign-element-red-x-260nw-567030823.jpg); no-repeat; background-size:cover; float: right;">_</button>
+
+<br><br><br>
+<table border=1 align="center">
+  <tr *ngFor="let item of arregloMod; let i=index">
+    <td>&nbsp;
+      <p *ngIf="contadorH>=1">{{i+1}}</p>
+    </td> 
+    <td>&nbsp;
+      <p *ngIf="contadorH>=1">{{item.name}}</p>
+    </td>
+    <td>&nbsp;
+      <p *ngIf="contadorH>=1">{{item.distributor}}</p>
+    </td> 
+    <td>&nbsp;
+      <p *ngIf="contadorH>=1">{{item.year}}</p>
+    </td>
+    <td>&nbsp;
+      <p *ngIf="contadorH>=1">{{item.director}}</p>
+    </td>
+    <td>&nbsp;
+    <p *ngIf="contadorH>=1">{{item.boxOffice}}</p>
+  </td>  
+  </tr>
+</table>
+
+<input type="text" id="searchBox" [ngModel]="micadena"/>
+
+<!--Condicion original contadorH>=1 && i<indexH
+<table border=1 align="center">
+  <tr *ngFor="let item2 of minuevoArray; let i=index">
+    <td>&nbsp;
+      <p>{{i+1}}</p>
+    </td> 
+    <td>&nbsp;
+      <p>{{item2.nombreColor}}</p>
+    </td>
+    <td>&nbsp;
+      <p>{{item2.valorHexadec}}</p>
+    </td> 
+  </tr>
+</table>
+-->
+
+
+<br><br><br><br>
+<!--
+<h1>Si se muestra {{contadorH}}, indice {{indexH}}, {{cuenta}}, cuenta2 {{cuenta2}}</h1>
+-->
+<!--
+<ul>
+
+  <li *ngFor="let element of jsonArray">{{element.username}}, {{element.uid}}, {{element.age}}</li>
+
+</ul>
+-->
