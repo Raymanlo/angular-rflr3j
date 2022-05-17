@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter, OnInit, OnDestroy, OnChanges } from '@angular/core';
 
-
+import {Servicio} from '../../app/servicio.service';
 //import arregloPelicula from './arregloP.json';
 
 @Component({
@@ -19,6 +19,7 @@ export class Contenido4Component implements OnInit, OnDestroy, OnChanges{
   cuenta=0;
   contador2=0;
   tab="Componente 4";
+  miListaJSON=[];
   
   //Definir el setter y getter
   private micadena: string = "";
@@ -29,10 +30,10 @@ export class Contenido4Component implements OnInit, OnDestroy, OnChanges{
   set setCadena(val: string) {
     //do some extra work here
     this.micadena = val;
-    let m1 = this.arregloPeli.filter(z=>{
+    this.arregloMod = this.miListaJSON.filter(z=>{
       return z.name.toString().includes(this.micadena);
     });
-    this.arregloMod=m1;
+    //this.arregloMod=m1;
   }
   ngOnInit(){
     console.log(this.cuenta2);
@@ -58,9 +59,9 @@ export class Contenido4Component implements OnInit, OnDestroy, OnChanges{
   }
 
   ngOnChanges(){
-    var micadena2 = this.micadena;
-    var arrPeli = this.arregloPeli;
-    var arrMod = this.arregloMod;
+    //var micadena2 = this.micadena;
+    //var arrPeli = this.arregloPeli;
+    /var arrMod = this.arregloMod;
     /*
     let m1 = arrPeli.filter(z=>{
       return z.name.toString().includes((<HTMLInputElement>document.getElementById('searchBox')).value.toString());
@@ -72,14 +73,26 @@ export class Contenido4Component implements OnInit, OnDestroy, OnChanges{
   }
 
   
-  constructor(){}
-  
+  //constructor(){}
+  //Definir el constructor para el servicio inyectable
+  //data:any;
+  constructor(private miServicio: Servicio) {
+    this.getData();
+  }
+
+  getData() {
+    this.miServicio.getData().subscribe((response) => {
+      this.miListaJSON = response;
+    });
+  }
+  /////Fin del metodo constructor
+
   sendData(){
     this.parentFunction.emit(this.dato);
     this.seHaCerrado.emit(this.tab);
   }
 
-
+/*
 arregloPeli = [
   {
     name: 'Avengers: Endgame',
@@ -123,10 +136,11 @@ arregloPeli = [
     director: 'Christopher Nolan', 
     boxOffice: '$365 609 000'
   },
-]
+]*/
 
 
-cuenta2 = this.arregloPeli.length;
+//cuenta2 = this.arregloPeli.length; //Viejo cuenteo
+cuenta2 = this.miListaJSON.length;
 
 @Input() contadorH;
 @Input() indexH;
