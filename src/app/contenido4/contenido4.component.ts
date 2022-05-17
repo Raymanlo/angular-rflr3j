@@ -29,6 +29,10 @@ export class Contenido4Component implements OnInit, OnDestroy, OnChanges{
   set setCadena(val: string) {
     //do some extra work here
     this.micadena = val;
+    let m1 = this.arregloPeli.filter(z=>{
+      return z.name.toString().includes(this.micadena);
+    });
+    this.arregloMod=m1;
   }
   ngOnInit(){
     console.log(this.cuenta2);
@@ -57,14 +61,14 @@ export class Contenido4Component implements OnInit, OnDestroy, OnChanges{
     var micadena2 = this.micadena;
     var arrPeli = this.arregloPeli;
     var arrMod = this.arregloMod;
-
+    /*
     let m1 = arrPeli.filter(z=>{
       return z.name.toString().includes((<HTMLInputElement>document.getElementById('searchBox')).value.toString());
     });
     arrMod = m1;
     console.log(micadena2);
     this.arregloMod = arrMod;
-    console.log("miarrmod", arrMod);  
+    console.log("miarrmod", arrMod);  */
   }
 
   
